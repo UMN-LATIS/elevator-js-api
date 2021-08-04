@@ -17,12 +17,12 @@ export default {
     {
       file: "dist/index.umd.min.js",
       format: "umd",
-      name: "elevator-api",
+      name: "elevator",
     },
     {
       file: "dist/index.umd.min.js",
       format: "umd",
-      name: "elevator-api",
+      name: "elevator",
       plugins: [terser()],
     },
   ],
