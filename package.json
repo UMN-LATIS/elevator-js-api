@@ -1,6 +1,6 @@
 {
   "name": "@umn-latis/elevator-js-api",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "API to interface with the Elevator digital asset management platform",
   "main": "dist/index.js",
   "module": "dist/index.min.mjs",
