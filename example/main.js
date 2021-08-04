@@ -1,4 +1,4 @@
-import elevator from "./src/index.ts";
+import elevator from "../src/index.ts";
 
 const onReady = (fn) =>
   document.readyState !== "loading"
@@ -35,6 +35,16 @@ onReady(() => {
             document.getElementById("logOutput").insertAdjacentHTML('beforeend',"<li>" + entry + ": "+ res[entry] + "</li>"); 
         }
         document.getElementById("logOutput").insertAdjacentHTML('beforeend',"</li>");
+        return elevatorInstance.getAssetChildren("566ef3ee7d58ae4422d17047");
+    })
+    .then((res) => {
+        return elevatorInstance.getEmbedContent("566ef3ee7d58aefd50d1704a");
+    })
+    .then((res) => {
+        return elevatorInstance.fileLookup("566ef3ee7d58aefd50d1704a");
+    })
+    .then((res) => {
+        console.log(res)
     });
 
     const result2 = elevatorInstance.search("terrorism").then((res) => {
