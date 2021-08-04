@@ -1,0 +1,45 @@
+{
+  "name": "elevator",
+  "version": "2.0.0",
+  "description": "API to interface with the Elevator digital asset management platform",
+  "main": "dist/index.js",
+  "module": "dist/index.min.mjs",
+  "unpkg": "dist/index.umd.min.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": "./dist/index.js",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "async-await-queue": "^1.2.0",
+    "js-sha1": "^0.6.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "@types/jest": "^26.0.24",
+    "eslint": "^7.32.0",
+    "jest": "^27.0.6",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.55.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "snowpack": "^3.8.3",
+    "ts-jest": "^27.0.4",
+    "typescript": "^4.3.5"
+  },
+  "scripts": {
+    "start": "snowpack dev",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "test:watch": "npm run test -- --watch",
+    "build": "npm run clean && npm ci && npm run lint && tsc --project tsconfig.json && npm run bundle",
+    "bundle": "rollup -c rollup.config.js dist/index.js",
+    "clean": "rimraf dist example/dist",
+    "lint": "eslint"
+  },
+  "author": "",
+  "license": "ISC"
+}
