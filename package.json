@@ -1,5 +1,5 @@
 {
-  "name": "elevator",
+  "name": "@umn-latis/elevator-js-api",
   "version": "2.0.0",
   "description": "API to interface with the Elevator digital asset management platform",
   "main": "dist/index.js",
@@ -38,6 +38,7 @@
     "build": "npm run clean && npm ci && npm run lint && tsc --project tsconfig.json && npm run bundle",
     "bundle": "rollup -c rollup.config.js dist/index.js",
     "clean": "rimraf dist example/dist",
+    "publish": "npm run build && np",
     "lint": "eslint"
   },
   "author": "",
